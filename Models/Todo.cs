@@ -4,7 +4,7 @@ namespace angular_todolist.Models
   {
     public int UserId { get; set; }
     public int Id { get; set; }
-    public string title { get; set; }
-    public bool completed { get; set; }
+    public string Title { get; set; }
+    public bool Completed { get; set; }
   }
 }

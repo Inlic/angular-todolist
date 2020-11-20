@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Linq;
 using angular_todolist.Models;
 using Dapper;
 
@@ -23,22 +24,36 @@ namespace angular_todolist.Repositories
 
     public Todo GetById(int id)
     {
-      throw new NotImplementedException();
+      return _db.Query<Todo>(@"
+      SELECT * FROM todos WHERE id = @id", new { id }).FirstOrDefault();
     }
 
     public Todo Create(Todo todo)
     {
-      throw new NotImplementedException();
+      int id = _db.ExecuteScalar<int>(@"
+      INSERT INTO todos(title, completed)
+      VALUES(@Title, @Completed); SELECT LAST_INSERT_ID();", todo);
+      todo.Id = id;
+      return todo;
     }
 
     public Todo Update(Todo todo)
     {
-      throw new NotImplementedException();
+      _db.Execute(@"
+        UPDATE todos
+        SET
+        title = @Title,
+        completed = @Completed
+        WHERE id = @Id;", todo);
+      return todo;
     }
 
     public bool Delete(int id)
     {
-      throw new NotImplementedException();
+      int success = _db.Execute(@"
+      DELETE FROM todos WHERE id = @id
+      ", new { id });
+      return success > 0;
     }
   }
 }

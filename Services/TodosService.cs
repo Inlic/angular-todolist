@@ -34,12 +34,12 @@ namespace angular_todolist.Services
 
     public Todo Update(Todo todo)
     {
-      var original = _repo.GetById(id);
+      var original = _repo.GetById(todo.Id);
       if (original == null)
       {
         throw new System.Exception("Invalid Id");
       }
-      todo.title = todo.title != null ? todo.title : original.title;
+      todo.Title = todo.Title != null ? todo.Title : original.Title;
       return _repo.Update(todo);
     }
 
