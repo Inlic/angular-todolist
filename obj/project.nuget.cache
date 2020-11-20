@@ -1,8 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "P+4CkJglHZA/RhmhgRK+4WjHVmIOi/wU7cMQAhDQncOeHrAtoEJvs6jp6VzSoxlIWuOoIBepUqXHv6+Ng+AMIQ==",
+  "dgSpecHash": "P1h2ALBtY2fc5IXLze0Rd/ccypZZHPtHdVzSoHevZCpK8en6RK9pTgZ2d75V7K59qAWEQJBIyB8jN5PrTii/kA==",
   "success": true,
   "projectFilePath": "C:\\source\\myprojects\\angular-todolist\\angular-todolist.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\bwied\\.nuget\\packages\\dapper\\2.0.35\\dapper.2.0.35.nupkg.sha512",
+    "C:\\Users\\bwied\\.nuget\\packages\\mysqlconnector\\1.0.1\\mysqlconnector.1.0.1.nupkg.sha512",
+    "C:\\Users\\bwied\\.nuget\\packages\\system.reflection.emit.lightweight\\4.7.0\\system.reflection.emit.lightweight.4.7.0.nupkg.sha512"
+  ],
   "logs": []
 }
