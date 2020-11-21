@@ -13,14 +13,14 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class TodoService {
-  todosUrl: string = 'https://jsonplaceholder.typicode.com/todos';
+  todosUrl: string = 'https://localhost:5001/api/todos';
   todosLimit = '?_limit=5';
 
   constructor(private http: HttpClient) { }
 
   //Get Todos
   getTodos(): Observable<Todo[]> {
-    return this.http.get<Todo[]>(`${this.todosUrl}${this.todosLimit}`);
+    return this.http.get<Todo[]>(`${this.todosUrl}`);
   }
 
   //Delete Todo
