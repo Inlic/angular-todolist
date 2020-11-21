@@ -40,6 +40,10 @@
               "target": "Package",
               "version": "[2.0.35, )"
             },
+            "Microsoft.AspNetCore.SpaServices.Extensions": {
+              "target": "Package",
+              "version": "[3.1.8, )"
+            },
             "MySqlConnector": {
               "target": "Package",
               "version": "[1.0.1, )"

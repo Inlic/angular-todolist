@@ -29,6 +29,27 @@ namespace angular_todolist
     // This method gets called by the runtime. Use this method to add services to the container.
     public void ConfigureServices(IServiceCollection services)
     {
+
+
+      services.AddCors(options =>
+      {
+        options.AddPolicy("CorsDevPolicy", builder =>
+              {
+                builder
+                          .WithOrigins(new string[]{
+                            "http://localhost:4200",
+                          })
+                          .AllowAnyMethod()
+                          .AllowAnyHeader()
+                          .AllowCredentials();
+              });
+      });
+      services.AddSpaStaticFiles(configuration =>
+      {
+        configuration.RootPath = "ClientApp/dist";
+      });
+
+
       services.AddControllers();
 
       services.AddTransient<TodosService>();
