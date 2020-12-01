@@ -36,7 +36,7 @@ namespace angular_todolist
               {
                 builder
                           .WithOrigins(new string[]{
-                            "http://localhost:4200",
+                            "http://localhost:4200"
                           })
                           .AllowAnyMethod()
                           .AllowAnyHeader()
@@ -69,17 +69,17 @@ namespace angular_todolist
       if (env.IsDevelopment())
       {
         app.UseDeveloperExceptionPage();
+        app.UseCors("CorsDevPolicy");
       }
       else
       {
         app.UseExceptionHandler("/Error");
         // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
-        app.UseHsts();
+        //app.UseHsts();
       }
 
-      app.UseCors("CorsPolicy");
-      app.UseHttpsRedirection();
       app.UseStaticFiles();
+
       if (!env.IsDevelopment())
       {
         app.UseSpaStaticFiles();
